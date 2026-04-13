@@ -268,12 +268,21 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            framesTl.to(frame1, {
-                clipPath: "polygon(0% 0%, 56% 0, 36% 100%, 0% 100%)",
+            if (isMoblie) {
+                framesTl.to(frame1, {
+                    clipPath: "polygon(0% 0%, 40% 0, 40% 100%, 0% 100%)",
 
-            }).to(frame2, {
-                clipPath: "polygon(0% 0%, 70% 0%, 49% 100%, 0% 100%)",
-            })
+                }).to(frame2, {
+                    clipPath: "polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%)",
+                })
+            } else {
+                framesTl.to(frame1, {
+                    clipPath: "polygon(0% 0%, 45% 0, 45% 100%, 0% 100%)",
+
+                }).to(frame2, {
+                    clipPath: "polygon(0% 0%, 55% 0%, 55% 100%, 0% 100%)",
+                })
+            }
 
         }
         framesAnimation();
