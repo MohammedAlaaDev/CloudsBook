@@ -278,22 +278,27 @@ window.addEventListener("DOMContentLoaded", () => {
         // ==== End Frames animation (pinning) ====
 
         // start footer animation
-        gsap.set("footer span", {
-            display: "inline-block",
-        })
-        const footerTl = gsap.timeline({
-            defaults: {
-                ease: "power1.inOut",
-                duration: 1,
-                stagger: 0.1,
-            },
-            repeat: -1,
-            yoyo: true
-        });
+        const footerAnimation = () => {
 
-        footerTl.to("footer span", {
-            y: 15,
-        })
+            gsap.set("footer span", {
+                display: "inline-block",
+            })
+            const footerTl = gsap.timeline({
+                defaults: {
+                    ease: "power1.inOut",
+                    duration: 1,
+                    stagger: 0.1,
+                },
+                repeat: -1,
+                yoyo: true
+            });
+
+            footerTl.to("footer span", {
+                y: 15,
+            })
+        }
+
+        footerAnimation();
         // end footer animation
 
     })
