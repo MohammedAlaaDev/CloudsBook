@@ -15,6 +15,10 @@
         body {
             font-family: 'Montserrat', sans-serif;
         }
+
+        * {
+            user-select: none;
+        }
     </style>
 </head>
 
@@ -26,64 +30,63 @@
 
         <!-- tree branches -->
         <img src="./assets/branch.webp"
-            class="absolute branch z-40 right-branch top-10 -right-20 w-1/2 md:w-1/3 rotate-13 opacity-90 select-none pointer-events-none"
+            class="absolute branch z-40 right-branch top-10 -right-20 w-1/2 md:w-1/3 rotate-13 opacity-90  pointer-events-none"
             alt="Tree Branch">
         <img src="./assets/branch.webp"
-            class="absolute branch z-40 left-branch bottom-36 -left-20 w-1/2 md:w-1/3 -rotate-12 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute branch z-40 left-branch bottom-36 -left-20 w-1/2 md:w-1/3 -rotate-12 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Tree Branch">
         <img src="./assets/branch.webp"
-            class="absolute branch z-40 right-branch bottom-24 -right-20 w-1/2 md:w-1/3 rotate-12 opacity-90 select-none pointer-events-none"
+            class="absolute branch z-40 right-branch bottom-24 -right-20 w-1/2 md:w-1/3 rotate-12 opacity-90  pointer-events-none"
             alt="Tree Branch">
 
         <!-- small moving clouds -->
-        <img src="./assets/cloud.webp" class="absolute moving-cloud select-none pointer-events-none top-10 left-0 w-48"
+        <img src="./assets/cloud.webp" class="absolute moving-cloud  pointer-events-none top-10 left-0 w-48"
             alt="Cloud">
-        <img src="./assets/cloud.webp" class="absolute moving-cloud select-none pointer-events-none top-48 left-0 w-48"
+        <img src="./assets/cloud.webp" class="absolute moving-cloud  pointer-events-none top-48 left-0 w-48"
             alt="Cloud">
-        <img src="./assets/cloud.webp" class="absolute moving-cloud select-none pointer-events-none top-64 left-0 w-48"
+        <img src="./assets/cloud.webp" class="absolute moving-cloud  pointer-events-none top-64 left-0 w-48"
             alt="Cloud">
-        <img src="./assets/cloud.webp" class="absolute moving-cloud select-none pointer-events-none left-0 w-48"
-            alt="Cloud">
+        <img src="./assets/cloud.webp" class="absolute moving-cloud  pointer-events-none left-0 w-48" alt="Cloud">
 
         <!-- bottom clouds -->
         <img src="./assets/cloud.webp"
-            class="absolute z-30 bottom-cloud -bottom-10 -left-20 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-30 bottom-cloud -bottom-10 -left-20 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-30 bottom-cloud -bottom-20 left-40 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-30 bottom-cloud -bottom-20 left-40 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-20 bottom-cloud -bottom-40 left-60 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-20 bottom-cloud -bottom-40 left-60 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-10 bottom-cloud -bottom-40 left-70 rotate-3 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-10 bottom-cloud -bottom-40 left-70 rotate-3 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-30 bottom-cloud -bottom-10 -right-20 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-30 bottom-cloud -bottom-10 -right-20 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-30 bottom-cloud -bottom-20 right-40 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-30 bottom-cloud -bottom-20 right-40 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-20 bottom-cloud -bottom-40 right-60 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-20 bottom-cloud -bottom-40 right-60 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
         <img src="./assets/cloud.webp"
-            class="absolute z-10 bottom-cloud -bottom-40 right-70 rotate-3 w-1/2 md:w-1/3 scale-x-[-1] opacity-90 select-none pointer-events-none"
+            class="absolute z-10 bottom-cloud -bottom-40 right-70 rotate-3 w-1/2 md:w-1/3 scale-x-[-1] opacity-90  pointer-events-none"
             alt="Cloud">
 
         <!-- hero text -->
         <div class="relative z-50 text-center w-screen bg-black/30 rounded-xl p-8">
             <h1
-                class="hero-p pointer-events-none z-50 select-none text-xl md:text-2xl font-bold text-orange-400 tracking-widest uppercase mb-2">
+                class="hero-p pointer-events-none z-50  text-xl md:text-2xl font-bold text-orange-400 tracking-widest uppercase mb-2">
                 <span class="text-orange-200">Wake</span> The Sleeping
             </h1>
 
             <h2
-                class="hero-text hero-heading z-50 pointer-events-none select-none text-6xl md:text-[6rem] font-black text-white leading-none">
+                class="hero-text hero-heading z-50 pointer-events-none  text-6xl md:text-[6rem] font-black text-white leading-none">
                 <span>W</span><span>R</span><span>A</span><span>T</span><span>H</span>
             </h2>
             <p
-                class="hero-p pointer-events-none z-50 select-none mt-6 max-w-xl mx-auto text-orange-300 font-bold leading-relaxed text-sm md:text-base">
+                class="hero-p pointer-events-none z-50  mt-6 max-w-xl mx-auto text-orange-300 font-bold leading-relaxed text-sm md:text-base">
                 They pushed a kind man too far, and created a monster they cannot kill. The debt is due, and he's here
                 to collect in blood.
             </p>
@@ -96,7 +99,7 @@
 
     <!-- start chapters section -->
     <section class="h-screen flex items-center chapters">
-        <div class="bg-[#ed9355] flex w-screen h-full chapters-container">
+        <div class="flex w-screen h-full chapters-container">
             <div
                 class="chapter w-screen flex-shrink-0 flex flex-col md:flex-row items-center justify-center gap-8 p-8 rounded-xl">
                 <div>
@@ -109,12 +112,12 @@
             <div
                 class="chapter w-screen flex-shrink-0 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-32 pl-4 p-8 rounded-xl">
                 <div>
-                    <span class="chapter-title text-orange-200 font-bold text-xl block mb-2">Chapter 1</span>
-                    <h2 class="chapter-subtitle text-5xl font-black text-amber-300 leading-tight mb-6">The Broken
-
+                    <span class="chapter-title text-orange-200 font-bold text-md md:text-xl block mb-2">Chapter 1</span>
+                    <h2 class="chapter-subtitle text-2xl md:text-5xl font-black text-amber-300 leading-tight mb-6">The
+                        Broken
                         <br> Silence
                     </h2>
-                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md">
+                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md text-sm md:text-lg">
                         The whispers of peace have faded, replaced by the deafening rhythm of a racing heart. They
                         mistook his silence for weakness, never realizing it was the only thing keeping the world safe
                         from him.
@@ -124,17 +127,19 @@
                     <div
                         class="absolute -inset-1 bg-red-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000">
                     </div>
-                    <img src="./assets/ch1.webp" alt="" class="relative w-64 h-96 object-cover rounded-lg shadow-2xl">
+                    <img src="./assets/ch1.webp" alt=""
+                        class="relative w-[400px] h-64 md:h-[500px] object-cover rounded-lg shadow-2xl">
                 </div>
             </div>
 
             <div
                 class="chapter w-screen flex-shrink-0 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-32 pl-4 p-8 rounded-xl">
                 <div>
-                    <span class="chapter-title text-orange-200 font-bold text-xl block mb-2">Chapter 2</span>
-                    <h2 class="chapter-subtitle text-5xl font-black text-amber-300 leading-tight mb-6">The Crimson <br>
+                    <span class="chapter-title text-orange-200 font-bold text-md md:text-xl block mb-2">Chapter 2</span>
+                    <h2 class="chapter-subtitle text-2xl md:text-5xl font-black text-amber-300 leading-tight mb-6">The
+                        Crimson <br>
                         Awakening</h2>
-                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md">
+                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md text-sm md:text-lg">
                         Kindness was a mask that has finally melted away. In the ruins of who he used to be, something
                         colder and darker has taken root. The mercy they ignored is now a luxury they can no longer
                         afford.
@@ -144,17 +149,41 @@
                     <div
                         class="absolute -inset-1 bg-blue-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000">
                     </div>
-                    <img src="./assets/ch2.webp" alt="" class="relative w-64 h-96 object-cover rounded-lg shadow-2xl">
+                    <img src="./assets/ch2.webp" alt=""
+                        class="relative w-[400px] h-64 md:h-[500px] object-cover rounded-lg shadow-2xl">
                 </div>
             </div>
 
             <div
                 class="chapter w-screen flex-shrink-0 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-32 pl-4 p-8 rounded-xl">
                 <div>
-                    <span class="chapter-title text-orange-200 font-bold text-xl block mb-2">Chapter 3</span>
-                    <h2 class="chapter-subtitle text-5xl font-black text-amber-300 leading-tight mb-6">The Final <br>
+                    <span class="chapter-title text-orange-200 font-bold text-md md:text-xl block mb-2">Chapter 3</span>
+                    <h2 class="chapter-subtitle text-2xl md:text-5xl font-black text-amber-300 leading-tight mb-6">The
+                        Ultimate <br>
+                        Vengence</h2>
+                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md text-sm md:text-lg">
+                        The era of mercy is about to over. Every drop of blood is gonna be spilled, every scar earned,
+                        has led to this moment. The world will finally witness the true cost of
+                        betraying.
+                    </p>
+                </div>
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-orange-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000">
+                    </div>
+                    <img src="./assets/ch3.webp" alt=""
+                        class="relative w-[400px] h-64 md:h-[500px] object-cover rounded-lg shadow-2xl">
+                </div>
+            </div>
+
+            <div
+                class="chapter w-screen flex-shrink-0 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-32 pl-4 p-8 rounded-xl">
+                <div>
+                    <span class="chapter-title text-orange-200 font-bold text-md md:text-xl block mb-2">Chapter 4</span>
+                    <h2 class="chapter-subtitle text-2xl md:text-5xl font-black text-amber-300 leading-tight mb-6">The
+                        Final <br>
                         Reckoning</h2>
-                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md">
+                    <p class="chapter-paragraph text-orange-100 leading-relaxed max-w-md text-sm md:text-lg">
                         The debt is written in scars, and the time for payment has arrived. No walls are high enough, no
                         prayers are loud enough. Today, the monster they created comes home to claim what is rightfully
                         his.
@@ -164,7 +193,8 @@
                     <div
                         class="absolute -inset-1 bg-orange-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000">
                     </div>
-                    <img src="./assets/ch3.webp" alt="" class="relative w-64 h-96 object-cover rounded-lg shadow-2xl">
+                    <img src="./assets/ch4.webp" alt=""
+                        class="relative w-[400px] h-64 md:h-[500px] object-cover rounded-lg shadow-2xl">
                 </div>
             </div>
 
@@ -172,58 +202,88 @@
     </section>
     <!-- end chapters section -->
 
-    <!-- start gallery section  -->
-    <section id="gallery" class="relative w-full overflow-hidden">
-        <div id="gallery-container" class="relative w-full bg-black text-white text-center uppercase">
+    <!-- start parent gallery section  -->
+    <section class="gallery">
 
-            <div class="gallery-frame relative inset-0 w-full h-screen flex justify-center items-center z-50">
-                <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+
+        <!-- start clip path section  -->
+        <section id="clips" class="relative w-full overflow-hidden">
+            <div id="clips-container" class="relative w-full text-white text-center uppercase">
+
+                <div class="clip-container">
+                    <div
+                        class="gallery-frame overflow-hidden relative inset-0 w-full h-screen flex justify-center items-center mb-8 z-50">
+                        <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+                        </div>
+                        <h2
+                            class="absolute frame-letters text-2xl sm:text-6xl md:text-8xl font-bold text-yellow-400 z-50">
+                            <span>F</span><span>E</span><span>E</span><span>L</span>
+                        </h2>
+                        <img src="./assets/naruto.webp" alt="" class="size-full object-cover">
+                    </div>
                 </div>
-                <h2 class="absolute text-2xl sm:text-6xl md:text-8xl font-bold text-yellow-400 z-50">Feel</h2>
-                <img src="./assets/naruto.webp" alt="" class="size-full object-cover">
-            </div>
 
-            <div class="gallery-frame relative inset-0 w-full h-screen flex justify-center items-center z-50">
-                <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+                <div class="clip-container">
+                    <div
+                        class="gallery-frame overflow-hidden relative inset-0 w-full h-screen flex justify-center items-center mb-8 z-50">
+                        <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+                        </div>
+                        <h2
+                            class="absolute frame-letters text-2xl sm:text-6xl md:text-8xl font-bold text-orange-600 z-50">
+                            <span>T</span><span>H</span><span>E</span>
+                        </h2>
+                        <img src="./assets/sabito.webp" alt="" class="size-full object-cover">
+                    </div>
                 </div>
-                <h2 class="absolute text-2xl sm:text-6xl md:text-8xl font-bold text-blue-500 z-50">The</h2>
-                <img src="./assets/sabito.webp" alt="" class="size-full object-cover">
-            </div>
 
+            </div>
+        </section>
+        <!-- end clip path section  -->
+
+
+        <!-- start frames section (pinning section) -->
+        <div class="clip-container">
+            <section id="frames" class="gallery-frame relative w-full overflow-hidden">
+                <div id="frames-container" class="relative h-screen w-full text-white text-center uppercase">
+
+                    <div class="frame absolute inset-0 size-full flex justify-center items-center z-50">
+                        <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+                        </div>
+                        <h2 class="absolute text-2xl sm:text-6xl md:text-8xl font-bold text-orange-600 z-50">
+                            Ultimate anger
+                        </h2>
+                        <img src="./assets/sabito.webp" alt="" class="size-full object-cover">
+                    </div>
+
+                    <div class="frame absolute inset-0 size-full flex justify-center items-center z-50">
+                        <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+                        </div>
+                        <h2 class="absolute text-2xl sm:text-6xl md:text-8xl font-bold text-yellow-400 z-50">
+                            Ultimate anger
+                        </h2>
+                        <img src="./assets/naruto.webp" alt="" class="size-full object-cover">
+                    </div>
+
+                    <div class="frame absolute inset-0 size-full flex justify-center items-center z-50">
+                        <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
+                        </div>
+                        <h2
+                            class="absolute frame-letters text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-amber-400 z-50">
+                            <span>U</span><span>L</span><span>T</span><span>I</span><span>M</span><span>A</span><span>T</span><span>E</span>
+                            &nbsp;
+                            <span>A</span><span>N</span><span>G</span><span>E</span><span>R</span>
+                        </h2>
+                        <img src="./assets/tanjiro.webp" alt="" class="size-full object-cover">
+                    </div>
+
+                </div>
+            </section>
         </div>
+        <!-- end frames section (pinning section) -->
+
     </section>
 
-    <!-- end gallery section  -->
-
-    <!-- start frames section (pinning section) -->
-    <section id="frames" class="relative w-full overflow-hidden">
-        <div id="frames-container" class="relative h-screen w-full bg-black text-white text-center uppercase">
-
-            <div class="frame absolute inset-0 size-full flex justify-center items-center z-50">
-                <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
-                </div>
-                <h2 class="absolute text-2xl sm:text-6xl md:text-8xl font-bold text-yellow-400 z-50">Wrath</h2>
-                <img src="./assets/naruto.webp" alt="" class="size-full object-cover">
-            </div>
-
-            <div class="frame absolute inset-0 size-full flex justify-center items-center z-50">
-                <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
-                </div>
-                <h2 class="absolute text-2xl sm:text-6xl md:text-8xl font-bold text-blue-500 z-50">Wrath</h2>
-                <img src="./assets/sabito.webp" alt="" class="size-full object-cover">
-            </div>
-
-            <div class="frame absolute inset-0 size-full flex justify-center items-center z-50">
-                <div class="bg-black h-screen w-screen absolute z-40 opacity-35">
-                </div>
-                <h2 class="absolute text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-emerald-500 z-50">
-                    Wrath</h2>
-                <img src="./assets/tanjiro.webp" alt="" class="size-full object-cover">
-            </div>
-
-        </div>
-    </section>
-    <!-- end frames section (pinning section) -->
+    <!-- end parent gallery section  -->
 
 
     <footer class="p-6 w-full flex items-center justify-center text-gray-600">

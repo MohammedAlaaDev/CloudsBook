@@ -16,6 +16,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const chapters = gsap.utils.toArray(".chapter");
     const chaptersLen = chapters.length;
 
+    // gallery section selectors
+    const clipContainer = gsap.utils.toArray(".clip-container");
+    const galleryFrames = gsap.utils.toArray(".gallery-frame");
+    // gallery section setters
+    galleryFrames.forEach((galleryFrame) => {
+        gsap.set(galleryFrame, {
+            clipPath: "polygon(35% 23%, 69% 45%, 100% 100%, 0 100%)",
+        })
+    })
+
     // responsive
     const pageMM = gsap.matchMedia();
 
@@ -36,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 display: "inline-block",
             })
             gsap.set(".hero-p", {
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             })
 
             // first render animation
@@ -51,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 ease: "elastic.out",
                 stagger: 0.2,
             }).from(".hero-p", {
-                clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
                 opacity: isMoblie ? 0 : 1,
                 duration: isMoblie ? 2.5 : 1.5,
             }, "0").from(hero, {
@@ -63,9 +73,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 y: 40,
                 opacity: 0,
                 duration: 1,
+                ease: "power1.out",
             }, "<50%").from(".bottom-cloud", {
                 opacity: 0,
                 duration: 1,
+                ease: "power1.out",
             }, "<0%")
 
             // moving clouds animation
@@ -95,13 +107,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     end: "bottom 30%",
                     trigger: hero,
                     scrub: 1,
-                    ease: "none",
                 }
             });
 
             heroScrollTl.to(".hero .branch", {
                 y: 100,
-                ease: "none",
             }).to(".right-branch", {
                 scale: isMoblie ? 2 : 1,
             }, "<0%").to(".left-branch", {
@@ -113,13 +123,11 @@ window.addEventListener("DOMContentLoaded", () => {
             })
 
         }
-
         heroAnimation();
         // ==== End hero animation ====
 
 
         // ==== Start Chapters animation ====
-
         const chaptersAnimation = () => {
             const horizontalScroll = gsap.to(".chapters-container", {
                 xPercent: -100 * (chaptersLen - 1),
@@ -130,12 +138,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     end: `+=${500 * chaptersLen}px bottom`,
                     scrub: 1,
                     pin: true,
-                    ease: "none",
                     anticipatePin: 1,
                 }
             })
 
-            // problem here !!
             chapters.forEach((chapter, idx) => {
                 const chapterTl = gsap.timeline({
                     scrollTrigger: {
@@ -144,7 +150,6 @@ window.addEventListener("DOMContentLoaded", () => {
                         start: "left center",
                         end: "bottom bottom",
                         trigger: chapter,
-                        ease: "none",
                         toggleActions: "play none none reverse"
                     }
                 });
@@ -155,20 +160,84 @@ window.addEventListener("DOMContentLoaded", () => {
                 }).from(chapter.querySelector(".chapter-subtitle"), {
                     opacity: 0,
                     y: 30,
-                }, "<10%").from(chapter.querySelector(".chapter-paragraph"), {
-                    y: 30,
-                    opacity: 0,
-                }, "<10%").from(chapter.querySelector("img"), {
-                    y: 30,
-                    opacity: 0,
                 }, "<10%")
+                if (idx !== 0) {
+
+                    chapterTl.from(chapter.querySelector(".chapter-paragraph"), {
+                        y: 30,
+                        opacity: 0,
+                    }, "<10%").from(chapter.querySelector("img"), {
+                        y: 30,
+                        opacity: 0,
+                    }, "<10%")
+                }
 
             })
         }
-
         chaptersAnimation();
-
         // ==== End Chapters animation ====
+
+
+        // ==== Start Gallery animation ====
+        const galleryAnimation = () => {
+
+            clipContainer.forEach((clip, idx) => {
+                const isLast = idx === clipContainer.length - 1;
+
+                // inner text
+                const lettersAnimation = () => {
+                    gsap.set(clip.querySelectorAll(".frame-letters span"), {
+                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                    })
+                    gsap.from(clip.querySelectorAll(".frame-letters span"), {
+                        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+                        opacity: 0,
+                        stagger: {
+                            each: isLast ? 0.01 : 0.1,
+                            from: "center",
+                        },
+                        scrollTrigger: {
+                            trigger: clip,
+                            // markers: true,
+                            start: "top center",
+                            end: "top center",
+                            toggleActions: "play none none reverse"
+                        }
+                    })
+                }
+                lettersAnimation();
+
+                // clip path effect
+                const clipPathAnimation = () => {
+                    const clipTl = gsap.timeline({
+                        scrollTrigger: {
+                            // markers: true,
+                            start: "top bottom",
+                            end: `bottom ${isLast ? "bottom" : "top"}`,
+                            scrub: 1,
+                            trigger: clip
+                        }
+                    });
+
+                    clipTl.to(clip.querySelector(".gallery-frame"), {
+                        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                    })
+
+                    if (!isLast) {
+                        clipTl.to(clip.querySelector(".gallery-frame"), {
+                            clipPath: "polygon(0 0, 100% 0, 77% 56%, 35% 68%)",
+                        })
+                    }
+                }
+                clipPathAnimation();
+            })
+        }
+        galleryAnimation();
+        // ==== End Gallery animation ====
+
+
+        // ==== Start Frames animation (pinning) ====
+        // ==== End Frames animation (pinning) ====
 
     })
 
