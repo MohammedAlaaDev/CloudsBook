@@ -19,12 +19,13 @@ window.addEventListener("DOMContentLoaded", () => {
     // gallery section selectors
     const clipContainer = gsap.utils.toArray(".clip-container");
     const galleryFrames = gsap.utils.toArray(".gallery-frame");
-    // gallery section setters
-    galleryFrames.forEach((galleryFrame) => {
-        gsap.set(galleryFrame, {
-            clipPath: "polygon(35% 23%, 69% 45%, 100% 100%, 0 100%)",
-        })
-    })
+
+
+    // frames (pinning) section selectors
+    const framesSection = document.querySelector("#frames-section");
+    const frames = gsap.utils.toArray("#frames-section .frame");
+    const frame1 = document.querySelector("#frames-section .frame-1");
+    const frame2 = document.querySelector("#frames-section .frame-2");
 
     // responsive
     const pageMM = gsap.matchMedia();
@@ -180,6 +181,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // ==== Start Gallery animation ====
         const galleryAnimation = () => {
+            // gallery section setters
+            galleryFrames.forEach((galleryFrame) => {
+                gsap.set(galleryFrame, {
+                    clipPath: "polygon(35% 23%, 69% 45%, 100% 100%, 0 100%)",
+                })
+            })
 
             clipContainer.forEach((clip, idx) => {
                 const isLast = idx === clipContainer.length - 1;
@@ -187,10 +194,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 // inner text
                 const lettersAnimation = () => {
                     gsap.set(clip.querySelectorAll(".frame-letters span"), {
-                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
                     })
                     gsap.from(clip.querySelectorAll(".frame-letters span"), {
-                        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+                        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
                         opacity: 0,
                         stagger: {
                             each: isLast ? 0.01 : 0.1,
@@ -237,6 +244,37 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         // ==== Start Frames animation (pinning) ====
+        const framesAnimation = () => {
+            // frames (pinning) section setters
+            frames.forEach((frame, idx) => {
+                gsap.set(frame, {
+                    zIndex: -idx,
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                })
+            })
+
+            const framesTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: framesSection,
+                    start: "top top",
+                    end: `+=${frames.length * 500}px bottom`,
+                    pin: true,
+                    anticipatePin: 1,
+                    scrub: 1,
+                    // markers: true,
+                }
+            });
+
+            framesTl.to(frame1, {
+                clipPath: "polygon(0% 0%, 56% 0, 36% 100%, 0% 100%)",
+                duration: 1,
+            }).to(frame2, {
+                clipPath: "polygon(0% 0%, 70% 0%, 49% 100%, 0% 100%)",
+                duration: 0.5,
+            })
+
+        }
+        framesAnimation();
         // ==== End Frames animation (pinning) ====
 
     })
