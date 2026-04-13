@@ -262,15 +262,17 @@ window.addEventListener("DOMContentLoaded", () => {
                     anticipatePin: 1,
                     scrub: 1,
                     // markers: true,
+                },
+                defaults: {
+                    ease: "power1.out",
                 }
             });
 
             framesTl.to(frame1, {
                 clipPath: "polygon(0% 0%, 56% 0, 36% 100%, 0% 100%)",
-                duration: 1,
+
             }).to(frame2, {
                 clipPath: "polygon(0% 0%, 70% 0%, 49% 100%, 0% 100%)",
-                duration: 0.5,
             })
 
         }
